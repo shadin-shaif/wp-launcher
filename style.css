@@ -1,0 +1,15 @@
+/*
+Theme Name: Launcher
+Theme URI: https://www.example.com/alpha-theme
+Description: A stylish WordPress theme.
+Tags: blog, one-column, custom-logo, custom-menu
+Author: Shadin
+Author URI: https://www.devshadin.com/author
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: launcher
+*/
+body li{
+    list-style: none;
+}
