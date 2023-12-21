@@ -3,7 +3,13 @@
 *Template Name: Launcher 
 */
 ?>
-<?php get_header(); ?>
+<?php
+get_header();
+$launcher_placeholder_text = get_post_meta(get_the_ID(), 'Placeholder', true);
+$launcher_btn_text = get_post_meta(get_the_ID(), 'Button Label', true);
+$launcher_hint = get_post_meta(get_the_ID(), 'Hint', true);
+?>
+
 <body <?php body_class(); ?>>
     <div class="fh5co-loader"></div>
 
@@ -29,9 +35,9 @@
                             <div class="col-lg-7 animate-box">
                                 <form action="#" id="fh5co-subscribe">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Enter your email">
-                                        <input type="submit" value="Send" class="btn btn-primary">
-                                        <p class="tip"><?php _e('Please enter your email address for early access.', 'launcher') ?></p>
+                                        <input type="text" class="form-control" placeholder="<?php esc_attr(_e($launcher_placeholder_text, 'launcher')); ?>">
+                                        <input type="submit" value="<?php esc_attr(_e($launcher_btn_text, 'launcher')); ?>" class="btn btn-primary">
+                                        <p class="tip"><?php esc_html(_e($launcher_hint, 'launcher')); ?></p>
                                     </div>
                                 </form>
                             </div>
@@ -44,23 +50,21 @@
         <div id="fh5co-footer">
             <div class="row">
                 <div class="col-md-6">
-                    <?php 
-                        if(is_active_sidebar('footer-left')){
-                            dynamic_sidebar('footer-left');
-                        }
+                    <?php
+                    if (is_active_sidebar('footer-left')) {
+                        dynamic_sidebar('footer-left');
+                    }
                     ?>
                 </div>
                 <div class="col-md-6 fh5co-copyright">
-                        <?php
-                            if(is_active_sidebar('footer-rihgt')){
-                                dynamic_sidebar('footer-rihgt');
-                            }
-                        ?>
+                    <?php
+                    if (is_active_sidebar('footer-rihgt')) {
+                        dynamic_sidebar('footer-rihgt');
+                    }
+                    ?>
                 </div>
             </div>
         </div>
 
     </div>
-
-
-<?php get_footer(); ?>
+    <?php get_footer(); ?>

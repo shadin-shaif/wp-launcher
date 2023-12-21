@@ -88,9 +88,9 @@
 	var countDown = function() {
 
 		simplyCountdown('.simply-countdown-one', {
-			year: "2024",
-			month: "01",
-			day: "30"
+			year: launcherdate.year,
+			month: launcherdate.month,
+			day: launcherdate.day,
 		});
 
 	};
